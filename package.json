@@ -1,0 +1,33 @@
+{
+  "name": "code-projects",
+  "version": "0.0.1",
+  "description": "vue website for testing code in isolation",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "serve": "parcel src/**/index.html",
+    "build": "parcel build src/**/index.html --out-dir=docs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joannabartolome/code-projects.git"
+  },
+  "author": "joanna",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/joannabartolome/code-projects/issues"
+  },
+  "homepage": "https://github.com/joannabartolome/code-projects#readme",
+  "dependencies": {
+    "parcel": "^1.12.4",
+    "vue": "^2.6.11",
+    "vue-hot-reload-api": "^2.3.4"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.1.1",
+    "sass": "^1.25.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
