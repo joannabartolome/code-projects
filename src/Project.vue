@@ -72,6 +72,7 @@
 
 
 		&__description {
+			flex: inherit;
 			height: 130px;
 			padding-top: 20px;
 			padding-bottom: 20px;
