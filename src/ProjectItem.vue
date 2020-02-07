@@ -16,7 +16,7 @@
 			classObject() {
 				return {
 					'project-item__label--active': this.isActive,
-				}
+				}		
 			},
 		},
 		methods: {

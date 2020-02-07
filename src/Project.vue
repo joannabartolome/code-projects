@@ -60,7 +60,7 @@
 
 <style lang='scss'>
 	.project {
-		color: #445566;
+		color: #000000;
 		font-family: 'Roboto';
 		font-size: 11px;
 
