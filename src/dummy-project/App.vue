@@ -8,15 +8,12 @@
 <script>
 	import Vue from 'vue'
 
-	// TODO: Dynamic import() for less verbose syntax
-	import DummyComponent from './blueprints/DummyComponent.vue'
-	Vue.component('dummy-component', DummyComponent)
+	// Import components
+	Vue.component('dummy-component', () => import('./blueprints/DummyComponent.vue'))
 
-	import DummyComponentScenario from './scenarios/DummyComponentScenario.vue'
-	Vue.component('dummy-component-scenario', DummyComponentScenario)
-
-	import DummyComponentScenario2 from './scenarios/DummyComponentScenario2.vue'
-	Vue.component('dummy-component-scenario-2', DummyComponentScenario2)
+	// Import scenarios
+	Vue.component('dummy-component-scenario', () => import('./scenarios/DummyComponentScenario.vue'))
+	Vue.component('dummy-component-scenario-2', () => import('./scenarios/DummyComponentScenario2.vue'))
 
 
 	export default Vue.extend({
