@@ -1,7 +1,6 @@
 <template>
 	<div class='app'>
-		<!-- TODO: Should be a <project> -->
-		<dummy-component-scenario></dummy-component-scenario>
+		<project :state='state'></project>
 	</div>
 </template>
 
@@ -25,10 +24,15 @@
 					info: 'This is some project info',
 					scenarioList: [
 						{
-							name: 'DummyComponent',
+							name: 'Dummy Component',
+							blueprint: 'dummy-component-scenario'
+						},
+						{
+							name: 'Dummy Component 2',
 							blueprint: 'dummy-component-scenario'
 						}
 					],
+					selectedScenario: 'Dummy Component',
 				}
 			}
 		}
