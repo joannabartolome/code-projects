@@ -63,39 +63,42 @@
 		color: #445566;
 		font-family: 'Roboto';
 		font-size: 11px;
-		border: 1px solid blue;
 
 		width: 100vw;
 		height: 100vh;
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-start;
 
 
 		&__description {
-			height: 120px;
+			height: 130px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+
 			display: flex;
-			padding: 20px;
 			justify-content: space-between;
 			flex-wrap: wrap;
-			overflow: scroll;
 
-			border: 1px solid orange;
+			overflow: scroll;
 
 
 			@media (max-width: 650px) {
 				/* Must match ProjectItem.vue breakpoint! */
 				height: 200px;
+				display: block;
 			}
 		}
 
 		&__summary {
 			max-width: 350px;
-			margin-bottom: 20px;
+			margin-left: 10px;
 
 			@media (max-width: 650px) {
 				/* Must match ProjectItem.vue breakpoint! */
 				max-width: 600px;
 				margin-right: 20px;
+				margin-bottom: 30px;
 			}
 		}
 
@@ -122,22 +125,17 @@
 
 		&__scenarios {
 			max-width: 450px;
-			margin-left: 63px;
-			margin-right: 80px;
-			border: 1px solid yellow;
-			display: flex;
-			flex-direction: column;
+			margin-left: 72px;
+			margin-right: 30px;
 		}
 
 		&__scenario-list {
-			border: 1px solid teal;
 			margin-top: 9px;
 		}
 
 
 		&__live-example {
-			border: 1px solid red;
-			
+			padding: 30px;
 			background-color: #F6F6F6;
 			overflow: scroll;
 
