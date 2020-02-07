@@ -25,7 +25,6 @@
 		</div>
 
 		<div class='project__live-example'>
-			<!-- THIS ISN'T WORKING, BUT IT SHOULD -->
 			<component :is='activeComponent'></component>
 		</div>
 	</div>
@@ -66,19 +65,27 @@
 		font-size: 11px;
 		border: 1px solid blue;
 
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+
+
 		&__description {
-			height: 13vh;
+			height: 120px;
 			display: flex;
 			padding: 20px;
 			justify-content: space-between;
 			flex-wrap: wrap;
 			overflow: scroll;
-		}
+
+			border: 1px solid orange;
 
 
-		@media (max-width: 650px) {
-			/* Must match ProjectItem.vue breakpoint! */
-			height: 20vh;
+			@media (max-width: 650px) {
+				/* Must match ProjectItem.vue breakpoint! */
+				height: 200px;
+			}
 		}
 
 		&__summary {
@@ -130,14 +137,11 @@
 
 		&__live-example {
 			border: 1px solid red;
+			
 			background-color: #F6F6F6;
-		
+			overflow: scroll;
 
-			position: fixed;
-			height: 86vh;
-			left: 0;
-			right: 0;
-			bottom: 0;
+			flex: 1;
 
 			@media (max-width: 650px) {
 				/* Must match Project.vue breakpoint! */
