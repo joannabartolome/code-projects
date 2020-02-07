@@ -8,7 +8,7 @@
   },
   "scripts": {
     "serve": "parcel src/**/index.html",
-    "build": "parcel build src/**/index.html --out-dir=docs/"
+    "build": "parcel build src/**/index.html --out-dir=docs/ --public-url=/code-projects/"
   },
   "repository": {
     "type": "git",
