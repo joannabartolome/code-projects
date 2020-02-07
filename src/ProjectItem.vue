@@ -45,7 +45,7 @@
 		&__live-example {
 			border: 1px solid red;
 			background-color: #F6F6F6;
-			position: center;
+		
 
 			position: fixed;
 			height: 86vh;
