@@ -6,10 +6,6 @@
   "directories": {
     "doc": "docs"
   },
-  "scripts": {
-    "serve": "parcel src/**/index.html",
-    "build": "parcel build src/**/index.html --out-dir=docs/ --public-url=/code-projects/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joannabartolome/code-projects.git"

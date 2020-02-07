@@ -1,18 +1,14 @@
 <template>
 	<div class='app'>
-		<h1>I'm a Vue App!!!!</h1>
-		<div class='wrapper'>
-			<div v-for='p in state.projectList'>
-				<a :href='p.link' target="_blank">{{p.name}}</a>
-				{{p.name}}
-			</div>
-		</div>
+		<h1>I'm a dummy component!!!!</h1>
 	</div>
 </template>
 
 
 <script>
 	import Vue from 'vue'
+
+	const baseURL = '/code-projects'
 
 	export default Vue.extend({
 		data() {
