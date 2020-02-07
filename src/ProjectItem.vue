@@ -44,12 +44,20 @@
 
 		&__live-example {
 			border: 1px solid red;
+			background-color: #F6F6F6;
+			position: center;
 
 			position: fixed;
-			height: 70vh;
+			height: 86vh;
 			left: 0;
 			right: 0;
 			bottom: 0;
+
+			@media (max-width: 650px) {
+				/* Must match Project.vue breakpoint! */
+				height: 79vh;
+			}
+
 		}
 	}
 </style>

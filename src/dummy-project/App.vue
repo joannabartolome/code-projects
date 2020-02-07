@@ -21,7 +21,7 @@
 			return {
 				state: {
 					title: 'Dummy Project',
-					info: 'This is some project info',
+					info: 'This is some project info Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at urna efficitur massa finibus eleifend. Aliquam sem risus, viverra vitae ipsum sit amet, molestie gravida dolor.',
 					scenarioList: [
 						{
 							name: 'Dummy Component',

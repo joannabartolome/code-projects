@@ -16,7 +16,8 @@ Publish
 
 In iTerm:
 
-- Run `parcel build src/**/index.html --out-dir=docs/ --public-url=/code-projects/` to generate the `docs/` folder - Run `git add .` to stage all changed files
+- Run `parcel build src/**/index.html --out-dir=docs/ --public-url=/code-projects/` to generate the `docs/` folder
+- Run `git add .` to stage all changed files
 - Run `git commit` to create a commit
 - Enter a commit message and save and close the file
 - Run `git push` to push to GitHub and update GitHub pages
