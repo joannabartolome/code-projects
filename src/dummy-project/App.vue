@@ -15,6 +15,9 @@
 	import DummyComponentScenario from './scenarios/DummyComponentScenario.vue'
 	Vue.component('dummy-component-scenario', DummyComponentScenario)
 
+	import DummyComponentScenario2 from './scenarios/DummyComponentScenario2.vue'
+	Vue.component('dummy-component-scenario-2', DummyComponentScenario2)
+
 
 	export default Vue.extend({
 		data() {
@@ -29,7 +32,7 @@
 						},
 						{
 							name: 'Dummy Component 2',
-							blueprint: 'dummy-component-scenario'
+							blueprint: 'dummy-component-scenario-2'
 						}
 					],
 					selectedScenario: 'Dummy Component',

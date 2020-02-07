@@ -3,9 +3,6 @@
 		<div class='project-item__label'
 			 :class='classObject'
 			 @click='onClick'>{{name}}</div>
-		<div class='project-item__live-example' v-show='isActive'>
-			<slot></slot>
-		</div>
 	</div>
 </template>
 
@@ -40,24 +37,6 @@
 			&--active {
 				color: brown;
 			}
-		}
-
-		&__live-example {
-			border: 1px solid red;
-			background-color: #F6F6F6;
-		
-
-			position: fixed;
-			height: 86vh;
-			left: 0;
-			right: 0;
-			bottom: 0;
-
-			@media (max-width: 650px) {
-				/* Must match Project.vue breakpoint! */
-				height: 79vh;
-			}
-
 		}
 	}
 </style>

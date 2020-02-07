@@ -1,26 +1,32 @@
 <template>
 	<div class='project'>
-		<div class='project__summary'>
-			<div class='project__summary-item'>
-				<div class='project__label'>Project</div> 
-				<div class='project__content'>{{state.title}}</div>
+		<div class='project__description'>
+			<div class='project__summary'>
+				<div class='project__summary-item'>
+					<div class='project__label'>Project</div> 
+					<div class='project__content'>{{state.title}}</div>
+				</div>
+				<div class='project__summary-item'>
+					<div class='project__label'>About</div> 
+					<div class='project__content'>{{state.info}}</div>
+				</div>
 			</div>
-			<div class='project__summary-item'>
-				<div class='project__label'>About</div> 
-				<div class='project__content'>{{state.info}}</div>
+			<div class='project__scenarios'>
+				<div class='project__scenario-list-label'>Components</div>
+				<div class='project__scenario-list'>
+					<project-item v-for='s in state.scenarioList'
+						 class='project__scenario-item'
+						 :name='s.name'
+						 :is-active='isActive(s)'
+						 :state='state'>
+					</project-item>
+				</div>
 			</div>
 		</div>
-		<div class='project__scenarios'>
-			<div class='project__scenario-list-label'>Components</div>
-			<div class='project__scenario-list'>
-				<project-item v-for='s in state.scenarioList'
-					 class='project__scenario-item'
-					 :name='s.name'
-					 :is-active='isActive(s)'
-					 :state='state'>
-					 <component :is='s.blueprint'></component>
-				</project-item>
-			</div>
+
+		<div class='project__live-example'>
+			<!-- THIS ISN'T WORKING, BUT IT SHOULD -->
+			<component :is='activeComponent'></component>
 		</div>
 	</div>
 </template>
@@ -31,6 +37,15 @@
 
 	export default Vue.extend({
 		props: ['state'],
+		computed: {
+			activeComponent() {
+				for (let s of this.state.scenarioList) {
+					if (s.name === this.state.selectedScenario) {
+						return s.blueprint
+					}
+				}
+			},
+		},
 		methods: {
 			isActive(scenario) {
 				if (scenario.name === this.state.selectedScenario) {
@@ -47,15 +62,19 @@
 <style lang='scss'>
 	.project {
 		color: #445566;
-		display: flex;
-		padding: 20px;
-		justify-content: space-between;
-		height: 13vh;
 		font-family: 'Roboto';
 		font-size: 11px;
 		border: 1px solid blue;
-		flex-wrap: wrap;
-		overflow: scroll;
+
+		&__description {
+			height: 13vh;
+			display: flex;
+			padding: 20px;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			overflow: scroll;
+		}
+
 
 		@media (max-width: 650px) {
 			/* Must match ProjectItem.vue breakpoint! */
@@ -108,6 +127,24 @@
 			margin-top: 9px;
 		}
 
+
+		&__live-example {
+			border: 1px solid red;
+			background-color: #F6F6F6;
+		
+
+			position: fixed;
+			height: 86vh;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			@media (max-width: 650px) {
+				/* Must match Project.vue breakpoint! */
+				height: 79vh;
+			}
+
+		}
 
 	}
 </style>

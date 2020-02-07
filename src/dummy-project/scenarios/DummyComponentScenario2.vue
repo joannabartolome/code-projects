@@ -12,7 +12,7 @@
 		data() {
 			return {
 				state: {
-					bloop: 'Scenario ONE content',
+					bloop: 'Scenario TWO content',
 				}
 			}
 		}

@@ -1,6 +1,7 @@
 <template>
-	<div class='app'>
+	<div class='dummy-component'>
 		<h1>I'm a dummy component!!!!</h1>
+		<div>Here's some state: {{state.bloop}}</div>
 	</div>
 </template>
 
@@ -8,31 +9,14 @@
 <script>
 	import Vue from 'vue'
 
-	const baseURL = '/code-projects'
-
 	export default Vue.extend({
-		data() {
-			return {
-				state: {
-					projectList: [
-						{
-							name: 'Dummy Project',
-							link: 'dummy-project/index.html',
-						},
-						{
-							name: 'Pricing Card',
-							link:'pricing-card/index.html',
-						},
-					],
-				}
-			}
-		}
+		props: ['state'],
 	})
 </script>
 
 
 <style lang='scss'>
-	.app {
+	.dummy-component {
 		color: #445566;
 	}
 </style>
