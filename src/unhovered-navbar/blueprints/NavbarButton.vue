@@ -9,9 +9,46 @@
 
 <script>
 	import Vue from 'vue'
+	import yaml from 'js-yaml'
+  import Ajv from 'ajv'
+
+	const validate = new Ajv().compile(yaml.safeLoad(`
+
+type: 'object'
+properties:
+  label:
+    type: 'string'
+  url:
+    type: 'string'
+  id:
+    type: 'string'
+  state:
+    enum:
+      - 'hovered'
+      - 'unhovered'
+      - 'default'
+
+	`.trim()))
+
 
 	export default Vue.extend({
-		props: ['model'],
+		props: {
+			model: {
+				validator(model) {
+          const result = validate(model)
+          if (!result) {
+            for (let err of validate.errors) {
+              let msg = `VALIDATION ERROR: ${err.message}\n`
+              msg += `    Schema Location: ${err.schemaPath}\n`
+              msg += `    Data Location: ${err.dataPath}`
+              console.error(msg)
+            }
+            return false
+          }
+          return true
+				}
+			},
+		},
 		computed: {
 			classObject: function() {
 				let b = {}
