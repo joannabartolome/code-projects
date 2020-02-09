@@ -24,8 +24,8 @@
 							link: 'dummy-project/index.html',
 						},
 						{
-							name: 'Pricing Card',
-							link:'pricing-card/index.html',
+							name: 'Unhovered Navbar',
+							link:'unhovered-navbar/index.html',
 						},
 					],
 				}
