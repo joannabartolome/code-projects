@@ -17,22 +17,30 @@
 
 
   const schema = `
-  
+
 type: 'object'
-additionalProperties: false
-minProperties: 4
 properties:
-  label:
+  buttonList:
+    type: 'array'
+    items:
+      type: 'object'
+      required:
+        - 'state'
+        - 'label'
+        - 'url'
+        - 'id'
+      properties:
+        state:
+          type: 'string'
+        label:
+          type: 'string'
+        url:
+          type: 'string'
+        id:
+          type: 'string'
+
+  hoveredButtonID:
     type: 'string'
-  url:
-    type: 'string'
-  id:
-    type: 'string'
-  state:
-    enum:
-      - 'hovered'
-      - 'unhovered'
-      - 'default'
 
   `
 

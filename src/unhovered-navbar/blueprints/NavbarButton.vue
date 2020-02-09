@@ -10,7 +10,7 @@
 <script>
 	import Vue from 'vue'
   import customValidator from '#/customValidator.js'
-  
+
 
   const schema = `
 
@@ -34,7 +34,6 @@ properties:
       - 'default'
 
   `
-
 
 
 	export default Vue.extend({
@@ -75,6 +74,8 @@ properties:
 			color: #000000;
 			padding-bottom: 20px;
 			border-bottom: 1.5px solid rgba(0,0,0,0);
+
+      transition: opacity .3s;
 
 			&--hovered {
 				border-bottom: 1.5px solid rgba(0,0,0,1);
