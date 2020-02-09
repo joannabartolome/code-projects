@@ -13,10 +13,12 @@
 
 <script>
 	import Vue from 'vue'
+  import yaml from 'js-yaml'
+  import Ajv from 'ajv'
   import customValidator from '#/customValidator.js'
 
 
-  const schema = `
+  const validate = new Ajv().compile(yaml.safeLoad(`
 
 type: 'object'
 properties:
@@ -42,13 +44,13 @@ properties:
   hoveredButtonID:
     type: 'string'
 
-  `
+  `.trim()))
 
 	export default Vue.extend({
     props: {
       model: {
         validator(model) {
-          return customValidator(schema, model)
+          return customValidator(validate, model)
         }
       },
     },

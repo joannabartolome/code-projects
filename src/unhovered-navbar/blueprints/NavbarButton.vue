@@ -9,10 +9,12 @@
 
 <script>
 	import Vue from 'vue'
+  import yaml from 'js-yaml'
+  import Ajv from 'ajv'
   import customValidator from '#/customValidator.js'
 
 
-  const schema = `
+  const validate = new Ajv().compile(yaml.safeLoad(`
 
 type: 'object'
 required:
@@ -33,14 +35,14 @@ properties:
       - 'unhovered'
       - 'default'
 
-  `
+  `.trim()))
 
 
 	export default Vue.extend({
 		props: {
 			model: {
 				validator(model) {
-          return customValidator(schema, model)
+          return customValidator(validate, model)
         }
 			},
 		},
@@ -75,7 +77,7 @@ properties:
 			padding-bottom: 20px;
 			border-bottom: 1.5px solid rgba(0,0,0,0);
 
-      transition: opacity .3s;
+
 
 			&--hovered {
 				border-bottom: 1.5px solid rgba(0,0,0,1);

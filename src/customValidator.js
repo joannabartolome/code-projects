@@ -1,12 +1,6 @@
 
-import yaml from 'js-yaml'
-import Ajv from 'ajv'
 
-
-export default function customValidator(schema, model) {
-  // This isn't super performant, but it keeps our examples nice and clean
-  const validate = new Ajv().compile(yaml.safeLoad(schema.trim()))
-
+export default function customValidator(validate, model) {
   const result = validate(model)
   if (!result) {
     for (let err of validate.errors) {
