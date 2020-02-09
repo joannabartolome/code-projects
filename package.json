@@ -6,6 +6,9 @@
   "directories": {
     "doc": "docs"
   },
+  "alias": {
+    "#": "./src"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joannabartolome/code-projects.git"

@@ -13,9 +13,37 @@
 
 <script>
 	import Vue from 'vue'
+  import customValidator from '#/customValidator.js'
+
+
+  const schema = `
+  
+type: 'object'
+additionalProperties: false
+minProperties: 4
+properties:
+  label:
+    type: 'string'
+  url:
+    type: 'string'
+  id:
+    type: 'string'
+  state:
+    enum:
+      - 'hovered'
+      - 'unhovered'
+      - 'default'
+
+  `
 
 	export default Vue.extend({
-		props: ['model'],
+    props: {
+      model: {
+        validator(model) {
+          return customValidator(schema, model)
+        }
+      },
+    },
 		methods: {
 			onItemHover(item) {
 				this.model.hoveredButtonID = item.id

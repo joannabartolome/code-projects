@@ -9,12 +9,17 @@
 
 <script>
 	import Vue from 'vue'
-	import yaml from 'js-yaml'
-  import Ajv from 'ajv'
+  import customValidator from '#/customValidator.js'
+  
 
-	const validate = new Ajv().compile(yaml.safeLoad(`
+  const schema = `
 
 type: 'object'
+required:
+  - 'label'
+  - 'url'
+  - 'id'
+  - 'state'
 properties:
   label:
     type: 'string'
@@ -28,25 +33,16 @@ properties:
       - 'unhovered'
       - 'default'
 
-	`.trim()))
+  `
+
 
 
 	export default Vue.extend({
 		props: {
 			model: {
 				validator(model) {
-          const result = validate(model)
-          if (!result) {
-            for (let err of validate.errors) {
-              let msg = `VALIDATION ERROR: ${err.message}\n`
-              msg += `    Schema Location: ${err.schemaPath}\n`
-              msg += `    Data Location: ${err.dataPath}`
-              console.error(msg)
-            }
-            return false
-          }
-          return true
-				}
+          return customValidator(schema, model)
+        }
 			},
 		},
 		computed: {
