@@ -75,12 +75,31 @@ properties:
 			text-decoration: none;
 			color: #000000;
 			padding-bottom: 20px;
-			border-bottom: 1.5px solid rgba(0,0,0,0);
 
+      position: relative;
+
+      transition: opacity .3s;
+
+
+      &:before {
+        content: '';
+        background-color: #000000;
+        position: absolute;
+        height: 2px;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+
+        transition: transform .3s;
+        transform: scaleX(0);
+        transform-origin: bottom left;
+      }
 
 
 			&--hovered {
-				border-bottom: 1.5px solid rgba(0,0,0,1);
+        &:before {
+          transform: scaleX(1);
+        }
 			}
 
 			&--unhovered {
