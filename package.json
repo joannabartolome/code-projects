@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/joannabartolome/code-projects#readme",
   "dependencies": {
-    "ajv": "^6.11.0",
+    "ajv": "^6.12.3",
     "js-yaml": "^3.13.1",
     "parcel": "^1.12.4",
     "vue": "^2.6.11",
